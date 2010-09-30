@@ -1,0 +1,24 @@
+<style type="text/css" media="screen">
+  #main table.queues tr.failed td {
+    border-top: 0;
+  }
+  #main table.queues tr.failure td {
+    border-top: 0;
+  }
+</style>
+
+<h1 class="wi">Failed Jobs</h1>
+<p class="intro">Jobs that have failed.</p>
+
+<table class='queues'>
+  <tr>
+    <th>Name</th>
+    <th>Failures</th>
+  </tr>
+  <% for queue in @queues.sort_by { |q| q.to_s } %>
+  <tr class="<%= Resque::Failure.backend.count(queue).zero? ? "failed" : "failure" %>">
+    <td class='queue failed'><a class="queue" href="<%= url :failed, queue %>"><%= queue %></a></td>
+    <td class='size'><%= Resque::Failure.backend.count(queue) %></td>
+  </tr>
+  <% end %>
+</table>

@@ -5,13 +5,14 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "resque-multiple-failure-backend"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Adds a failed queue for each queue}
+    gem.description = %Q{Individual failed queue for each queue you have}
     gem.email = "Ads.noob@gmail.com"
     gem.homepage = "http://github.com/omgitsads/resque-multiple-failure-backend"
     gem.authors = ["Adam Holt"]
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.files = FileList["[A-Z]*", "{bin,generators,lib,test}/**/*", 'lib/jeweler/templates/.gitignore']
+    gem.add_dependency "resque", ">= 0"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
