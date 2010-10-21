@@ -1,8 +1,17 @@
-= resque-multiple-failure-backend
+# resque-multiple-failure-backend
 
-Description goes here.
+## Usage
 
-== Note on Patches/Pull Requests
+### In ~/resque_conf.rb
+  
+    require 'resque/failure/multiple_failure'
+    require 'resque/failure_server'
+
+### In your worker application
+  
+    Resque::Failure.backend = Resque::Failure::MultipleFailure
+
+## Note on Patches/Pull Requests
  
 * Fork the project.
 * Make your feature addition or bug fix.
@@ -12,6 +21,6 @@ Description goes here.
   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
-== Copyright
+## Copyright
 
 Copyright (c) 2010 Adam Holt. See LICENSE for details.
