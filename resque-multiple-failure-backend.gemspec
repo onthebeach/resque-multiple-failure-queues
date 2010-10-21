@@ -14,13 +14,13 @@ Gem::Specification.new do |s|
   s.email = %q{Ads.noob@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
-     "README.rdoc"
+     "README.mdown"
   ]
   s.files = [
     "Gemfile",
      "Gemfile.lock",
      "LICENSE",
-     "README.rdoc",
+     "README.mdown",
      "Rakefile",
      "VERSION",
      "lib/resque/failure/multiple_failure.rb",
