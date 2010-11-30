@@ -18,7 +18,7 @@ module Resque
       
       app.post '/failed/:queue/clear' do
         Resque::Failure.backend.clear(params[:queue])
-        redirect u("failures/#{params[:queue]}")
+        redirect u("failure/#{params[:queue]}")
       end
       
       app.get '/failed/:queue/requeue/:id' do
