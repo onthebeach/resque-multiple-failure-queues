@@ -10,7 +10,7 @@
 </form>
 <%end%>
 
-<p class='sub'>Showing <%= start %> to <%= start + 20 %> of <b><%= size = Resque::Failure.backend.count(@queue) %></b> jobs</p>
+<p class='sub'>Showing <%= start %> to <%= start + 20 %> of <b><%= size = Resque::Failure.backend.count(queue) %></b> jobs</p>
 
 <ul class='failed'>
   <%for job in @failed%>
