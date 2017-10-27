@@ -17,7 +17,7 @@
   </tr>
   <% for queue in @queues.sort_by { |q| q.to_s } %>
   <tr class="<%= Resque::Failure.backend.count(queue).zero? ? "failed" : "failure" %>">
-    <td class='queue failed'><a class="queue" href="<%= url :failed, queue %>"><%= queue %></a></td>
+    <td class='queue failed'><a class="queue" href="<%= url "failed/#{queue}" %>"><%= queue %></a></td>
     <td class='size'><%= Resque::Failure.backend.count(queue) %></td>
   </tr>
   <% end %>
