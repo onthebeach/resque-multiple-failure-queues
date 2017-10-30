@@ -1,18 +1,25 @@
 # resque-multiple-failure-backend
 
+## Compatibility
+
+Version 2.0 is known to work with v1.22.0 of the Resque gem in a Rails 5 app.
+If you are using an older version of Rails: use v1.1.1 of this gem alongside v1.13.0 of the Resque gem.
+
+Later versions of the resque (or the newer resque-web) gem appear to have let functionality of the views for multiple failure queues fall into an abyss.
+
 ## Usage
 
 ### In ~/resque_conf.rb
-  
+
     require 'resque/failure/multiple_failure'
     require 'resque/failure_server'
 
 ### In your worker application
-  
+
     Resque::Failure.backend = Resque::Failure::MultipleFailure
 
 ## Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a
